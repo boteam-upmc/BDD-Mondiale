@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS `bdd_mondiale`.`Users` (
   `idUser` INT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(45) NOT NULL,
   `prenom` VARCHAR(45) NOT NULL,
-  `mail` VARCHAR(45) NULL,
+  `mail` VARCHAR(45) NOT NULL,
   `alpha` INT NOT NULL,
   `login` VARCHAR(45) NOT NULL,
   `passe` VARCHAR(45) NOT NULL,
