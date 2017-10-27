@@ -32,11 +32,12 @@ CREATE TABLE IF NOT EXISTS `bdd_mondiale`.`Users` (
   `idUser` INT NOT NULL AUTO_INCREMENT,
   `nom` VARCHAR(45) NOT NULL,
   `prenom` VARCHAR(45) NOT NULL,
-  `mail` VARCHAR(45) NOT NULL,
+  `mail` VARCHAR(45) NULL,
   `alpha` INT NOT NULL,
+  `login` VARCHAR(45) NOT NULL,
+  `passe` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idUser`),
-  UNIQUE INDEX `prenom_UNIQUE` (`prenom` ASC),
-  UNIQUE INDEX `nom_UNIQUE` (`nom` ASC)
+  UNIQUE INDEX `login_UNIQUE` (`login` ASC),
   UNIQUE INDEX `mail_UNIQUE` (`mail` ASC))
 ENGINE = InnoDB;
 
@@ -62,14 +63,6 @@ CREATE TABLE IF NOT EXISTS `bdd_mondiale`.`Users_Robots` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
--- -----------------------------------------------------
--- Insert first user for test (To Remove Later)
--- -----------------------------------------------------
-INSERT INTO `bdd_mondiale`.`Users` VALUES (
-    'TEST', 
-    'Test',
-    'test@test.test',
-    0);
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
